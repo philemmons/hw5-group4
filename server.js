@@ -78,7 +78,7 @@ function updateUserList(){
   allClients( 'numUser', numUser );
 }
 
-server.listen(process.env.PORT || 3000, process.env.IP || "127.0.0.1", function(){
+server.listen(process.env.PORT || 5000, process.env.IP || '0.0.0.0', function(){
   let addr = server.address();
   console.log("server listening:", addr.address + ":" + addr.port);
 });
