@@ -53,7 +53,7 @@ body {
 	float: right;
 	height: 100%;
 	line-height: 1em;
-	max-width: 200px;
+	max-width: 30%;
 }
 h4 {
 
@@ -119,11 +119,20 @@ ul li{
 
 #body-scroll{
 	display:block;
-	max-height:320px;
+	height: 250px;
 	overflow-y:auto;
 }
 
 .head-scroll{
 	position:relative;
 	display: block;
+}
+
+.span9, .span6 {
+	width: 70% !important;
+}
+
+.controls {
+	position: static;
+	bottom: 100px;
 }
