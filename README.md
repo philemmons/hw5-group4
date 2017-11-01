@@ -1,5 +1,7 @@
 # Homework 5 - Chat Bot
 
+Heroku url: https://hw5-group4-chatapp.herokuapp.com/
+
 ## Teammates
 
 * Phillip Emmons
@@ -7,11 +9,19 @@
 * Samba Diallo
 * Regie Daquiong
 
-## Strategy for Handling the “Interfaces” Between Each Other’s Code
+## Strategy for Handling the “Interfaces” Between Each Other’s Code -
 
-## Known Problems
+* Ensuring that we add, commit, and push our code after making changes
+* Ensuring that what we have on cloud9 is up to date (i.e. pulling new code from the repo)
+* Setting clear guidelines as to who is going to do what
 
-## What we Could Improve
+## Known Problems -
+
+* One of the known problems of homework 5 is ...
+
+## What we Could Improve -
+
+* To improve our project we could ...
 
 ## Note -
 
