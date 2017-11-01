@@ -17,7 +17,8 @@ Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 
 ## Known Problems -
 
-* One of the known problems of homework 5 is ...
+* One of the known problems of homework 5 is if you have the chat open in 2 tabs, <br> it registers you as 2 different users
+* Another known problem is ...
 
 ## What we Could Improve -
 
