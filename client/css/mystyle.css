@@ -121,11 +121,13 @@ ul li{
 	display:block;
 	height: 250px;
 	overflow-y:auto;
+	border: solid rgb(204, 204, 204) 0.5px;
 }
 
 .head-scroll{
 	position:relative;
 	display: block;
+	border: solid rgb(204, 204, 204) 0.5px;
 }
 
 .span9, .span6 {
