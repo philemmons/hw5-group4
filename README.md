@@ -24,11 +24,8 @@ Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 
 * To improve our project we could ...
 
-## Note -
 
-You may need to run the following command if the node_modules aren't installed: 'npm install'
-
-## To Run the program locally -
+## To Run the Program Locally -
 
 * In Cloud9 open your terminal and run: git clone https://github.com/philemmons/hw5-group4
 * Navigate to the "hw5-group4" folder
@@ -38,3 +35,7 @@ You may need to run the following command if the node_modules aren't installed: 
     $ node server.js
     
 * Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'.
+
+## Note For Running Locally-
+
+You may need to run the following command if the node_modules aren't installed: 'npm install'
