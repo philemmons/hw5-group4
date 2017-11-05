@@ -65,12 +65,13 @@ html(ng-app='')
     #container(ng-controller='AngJSController')
       #page
         #header
-          h1 Live Assistance 
+          h1 Live Assistance
 
           .right
             a(href='https://github.com/CSUMB-SCD/group4_FinalProject')  Project Github
             <br>
             a(href='https://github.com/philemmons/hw5-group4')  HW5 Github
+            br
             span.user <br>Users:
             span.user(ng-bind='numUser')
 
@@ -110,5 +111,5 @@ html(ng-app='')
                     .input-append.span7
                       input.span6(ng-model='userText', placeholder='Text Input', type='text')
 
-                      input.btn.btn-primary( ng-disabled='!userText', type='submit', value='Submit')
+                      input.btn.btn-success( ng-disabled='!userText', type='submit', value='Enter')
   div.fix
