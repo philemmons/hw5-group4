@@ -6,8 +6,8 @@ Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 
 * Phillip Emmons - Set up the socket.io, server, client, and set up outline of chat.
 * Jessie Dowding - Looked into setting up with react, readme, and fixed styling/scroll bar.
-* Samba Diallo - 
-* Regie Daquiong - 
+* Samba Diallo -
+* Regie Daquiong - The looks of the chat room.
 
 ## Strategy for Handling the “Interfaces” Between Each Other’s Code -
 
@@ -36,7 +36,7 @@ Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 * Alternatively you can launch the app from the Terminal:
 
     $ node server.js
-    
+
 * Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'.
 
 ## Note For Running Locally-
