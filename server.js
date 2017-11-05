@@ -13,7 +13,6 @@ router.use(express.static(__dirname + '/client'));
 router.set('views', path.join(__dirname, 'client/views'));
 
 router.set('view engine','jade');
-//router.configure('development', function( ) { router.locals.pretty = true; });
 router.get('/', function( req, res ){
   res.render( 'index' );
 });
