@@ -13,7 +13,6 @@ router.use(express.static(__dirname + '/client'));
 router.set('views', path.join(__dirname, 'client/views'));
 
 router.set('view engine','jade');
-//router.configure('development', function( ) { router.locals.pretty = true; });
 router.get('/', function( req, res ){
   res.render( 'index' );
 });
@@ -22,40 +21,46 @@ let socketArr = [];
 let userTextArr = [];
 let numUser = 0;
 
-io.on('connection', function(socket){
-  numUser++;
-    userTextArr.forEach(function(data){
-      socket.emit('message', data);
+io.on('connection',
+  function(socket){
+    numUser++;
+      userTextArr.forEach(function(data){
+        socket.emit('message', data);
     });
 
     socketArr.push(socket);
 
-    socket.on('message', function(textInput){
-      let userText = String(textInput || '');
+    socket.on('message',
+      function(textInput){
+        let userText = String(textInput || '');
 
-      if (!userText)
-        return;
+        if (!userText){
+          return;
+        }
 
-      socket.get('name', function(err, userName){
-        let data = { name: userName,
-                     text: userText
-        };
-        allClients('message', data);
-        userTextArr.push(data);
-      });
+        socket.get('name',
+          function(err, userName){
+            let data = { name: userName,
+                         text: userText
+            };
+            allClients('message', data);
+            userTextArr.push(data);
+          });
     });
 
-    socket.on('identify', function(name){
-      socket.set('name', String(name || 'Anonymous'), function(err){
+    socket.on('identify',
+      function(name){
+        socket.set('name', String(name || 'Anonymous'), function(err){
+          updateUserList();
+        });
+    });
+
+
+    socket.on('disconnect',
+      function(){
+        numUser--;
+        socketArr.splice(socketArr.indexOf(socket), 1);
         updateUserList();
-      });
-    });
-    
-    
-    socket.on('disconnect', function(){
-      numUser--;
-      socketArr.splice(socketArr.indexOf(socket), 1);
-      updateUserList();
     });
 
   });
