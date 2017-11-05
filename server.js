@@ -55,19 +55,11 @@ io.on('connection',
         });
     });
 
-
-<<<<<<< HEAD
-    socket.on('disconnect', function(){
-      numUser--;
-      socketArr.splice(socketArr.indexOf(socket), 1);
-      updateUserList();
-=======
     socket.on('disconnect',
       function(){
         numUser--;
         socketArr.splice(socketArr.indexOf(socket), 1);
         updateUserList();
->>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
     });
 
   });
