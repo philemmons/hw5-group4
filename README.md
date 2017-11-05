@@ -19,6 +19,7 @@ Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 
 * One of the known problems of homework 5 is if you have the chat open in 2 tabs, <br> it registers you as 2 different users
 * Another known problem is a user might not know what the number in the uper right hand corner means. <br> The number is the amount of users on the chat.
+* The table headings, specifically "users", doesn't adjust to the width of the users.
 
 ## What we Could Improve -
 

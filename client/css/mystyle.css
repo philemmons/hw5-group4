@@ -16,7 +16,7 @@ body {
 	padding-top: 1em;
 }
 
-#user{
+.user{
     text-align: right;
   	padding-top: 1em;
   	color: #22f;
@@ -130,8 +130,12 @@ ul li{
 	border: solid rgb(204, 204, 204) 0.5px;
 }
 
-.span9, .span6 {
+.span9, .span6{
 	width: 80% !important;
+}
+
+.table td.span7, .table th.span7 {
+	width: 100%;
 }
 
 .controls {
