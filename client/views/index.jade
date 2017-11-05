@@ -1,87 +1,87 @@
 doctype html
 html(ng-app='')
   head
-    title 
-         
+    title Live Chat
+
     meta(name='viewport', content='width=device-width, initial-scale=1.0', charset='utf-8')
-    
+
     style type='text/css'.
         include ../css/bootstrap.min.css
         include ../css/bootstrap-responsive.min.css
         include ../css/mystyle.css
-      
+
     script(src='/socket.io/socket.io.js')
-         
+
     script(src='/js/jquery.min.js')
-    
+
     script(src='/js/bootstrap.min.js')
-    
+
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js')
-    
+
     script.
       function AngJSController($scope) {
         var socket = io.connect();
-        
+
         $scope.userData = [];
-        
+
         $scope.userNameArr = [];
         $scope.userName = '';
         $scope.userText = '';
-        
+
         $scope.numUser = 0;
-        
+
         socket.on('connect', function(){
           $scope.setName();
           $scope.$apply();
         });
-        
+
         socket.on('message', function(data){
           $scope.userData.push(data);
           $scope.$apply();
-          
+
         });
-        
+
         socket.on('userList', function(names){
           $scope.userNameArr = names;
           $scope.$apply();
         });
-        
+
         socket.on( 'numUser', function( numUser ){
           $scope.numUser = numUser;
           $scope.$apply();
         });
-        
+
         $scope.send = function send(){
           socket.emit('message', $scope.userText);
           $scope.userText = '';
         };
-        
+
         $scope.setName = function setName() {
           socket.emit('identify', $scope.userName);
         };
       }
-      
+
   body
     #container(ng-controller='AngJSController')
       #page
         #header
-          h1 Live Assitance
-                   
+          h1 Live Assistance 
+
           .right
-            a(href='https://github.com/CSUMB-SCD/group4_FinalProject')  Project Github 
+            a(href='https://github.com/CSUMB-SCD/group4_FinalProject')  Project Github
             <br>
             a(href='https://github.com/philemmons/hw5-group4')  HW5 Github
             span.user <br>Users:
             span.user(ng-bind='numUser')
-               
+
         #main
           #area
             #title
               h4 Users Online
-                       
+
             ul
               li(ng-repeat='name in userNameArr track by $index',ng-bind='name')
-                   
+
           #content
             .row
               .span9
@@ -90,25 +90,25 @@ html(ng-app='')
                     tr
                       th.span2
                         h4 User
-                                       
-                      th.span7 
+
+                      th.span7
                         h4 Text
-                               
-                
+
+
                   tbody#body-scroll
                     tr(ng-repeat='info in userData track by $index')
-                    
+
                       td.span2(ng-bind='info.name')
-                      
+
                       td.span7(ng-bind='info.text')
 
                 .row.controls
                   form(ng-submit='send()')
                     .span2
                       input.input-block-level(ng-model='userName', ng-change='setName()', placeholder='User Name', type='text')
-                                  
+
                     .input-append.span7
                       input.span6(ng-model='userText', placeholder='Text Input', type='text')
-                                       
+
                       input.btn.btn-primary( ng-disabled='!userText', type='submit', value='Submit')
   div.fix
