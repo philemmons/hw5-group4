@@ -2,12 +2,12 @@
 
 Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 
-## Teammates and parts we did:
+## Teammates and Parts We Did:
 
 * Phillip Emmons - Set up the socket.io, server, client, and set up outline of chat.
-* Jessie Dowding - looked into setting up with react, readme, and fixed styling/scroll bar.
-* Samba Diallo
-* Regie Daquiong
+* Jessie Dowding - Looked into setting up with react, readme, and fixed styling/scroll bar.
+* Samba Diallo - 
+* Regie Daquiong - 
 
 ## Strategy for Handling the “Interfaces” Between Each Other’s Code -
 
