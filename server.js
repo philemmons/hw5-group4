@@ -35,7 +35,7 @@ io.on('connection', function(socket){
 
       if (!userText)
         return;
-
+      //UPDATE THE GET AND SET METHODS OF SOCKET, HERES A LINK TO HELP. https://github.com/socketio/socket.io/blob/master/examples/chat/index.js#L35-L36
       socket.get('name', function(err, userName){
         let data = { name: userName,
                      text: userText
