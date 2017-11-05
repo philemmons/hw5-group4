@@ -50,8 +50,8 @@ io.on('connection', function(socket){
         updateUserList();
       });
     });
-    
-    
+
+
     socket.on('disconnect', function(){
       numUser--;
       socketArr.splice(socketArr.indexOf(socket), 1);
