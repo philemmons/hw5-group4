@@ -2,12 +2,12 @@
 
 Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 
-## Teammates
+## Teammates and Parts We Did:
 
-* Phillip Emmons
-* Jessie Dowding
-* Samba Diallo
-* Regie Daquiong
+* Phillip Emmons - Set up the socket.io, server, client, and set up outline of chat.
+* Jessie Dowding - Looked into setting up with react, readme, and fixed styling/scroll bar.
+* Samba Diallo -
+* Regie Daquiong - The looks of the chat room.
 
 ## Strategy for Handling the “Interfaces” Between Each Other’s Code -
 
@@ -18,11 +18,14 @@ Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 ## Known Problems -
 
 * One of the known problems of homework 5 is if you have the chat open in 2 tabs, <br> it registers you as 2 different users
-* Another known problem is ...
+* The table headings, specifically "users", doesn't adjust to the width of the users.
 
 ## What we Could Improve -
 
-* To improve our project we could ...
+* To improve our project we could add authentification to the chat room.
+* Once authentification is added, we can then autofill the username of the person who is on the chat.
+* Perhaps, add an anonymous feature - so users aren't required to login if they don't want to.
+* <del>Another known improvement is a user might not know what the number in the uper right hand corner means.</del>
 
 
 ## To Run the Program Locally -
@@ -33,7 +36,7 @@ Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 * Alternatively you can launch the app from the Terminal:
 
     $ node server.js
-    
+
 * Once the server is running, open the project in the shape of 'https://projectname-username.c9users.io/'.
 
 ## Note For Running Locally-

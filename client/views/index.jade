@@ -1,7 +1,11 @@
 doctype html
 html(ng-app='')
   head
+<<<<<<< HEAD
     title
+=======
+    title Live Chat
+>>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
 
     meta(name='viewport', content='width=device-width, initial-scale=1.0', charset='utf-8')
 
@@ -11,11 +15,16 @@ html(ng-app='')
         include ../css/mystyle.css
 
     script(src='/socket.io/socket.io.js')
+<<<<<<< HEAD
 
     script(src='/js/jquery.min.js')
 
     script(src='/js/bootstrap.min.js')
 
+=======
+    script(src='/js/jquery.min.js')
+    script(src='/js/bootstrap.min.js')
+>>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js')
 
     script.
@@ -23,6 +32,7 @@ html(ng-app='')
         var socket = io.connect();
 
         $scope.userData = [];
+<<<<<<< HEAD
 
         $scope.userNameArr = [];
         $scope.userName = '';
@@ -30,6 +40,12 @@ html(ng-app='')
 
         $scope.numUser = 0;
 
+=======
+        $scope.userNameArr = [];
+        $scope.userName = '';
+        $scope.userText = '';
+        $scope.numUser = 0;
+>>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
         socket.on('connect', function(){
           $scope.setName();
           $scope.$apply();
@@ -38,7 +54,10 @@ html(ng-app='')
         socket.on('message', function(data){
           $scope.userData.push(data);
           $scope.$apply();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
         });
 
         socket.on('userList', function(names){
@@ -65,12 +84,24 @@ html(ng-app='')
     #container(ng-controller='AngJSController')
       #page
         #header
+<<<<<<< HEAD
           h1 Live Assitance
 
           .right
             a(href='https://github.com/CSUMB-SCD/group4_FinalProject')  G4FP
 
             #user(ng-bind='numUser')
+=======
+          h1 Live Assistance
+
+          .right
+            a(href='https://github.com/CSUMB-SCD/group4_FinalProject')  Project Github
+            <br>
+            a(href='https://github.com/philemmons/hw5-group4')  HW5 Github
+            br
+            span.user <br>Users:
+            span.user(ng-bind='numUser')
+>>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
 
         #main
           #area
@@ -88,6 +119,7 @@ html(ng-app='')
                     tr
                       th.span2
                         h4 User
+<<<<<<< HEAD
 
                       th.span7
                         h4 Text
@@ -98,6 +130,14 @@ html(ng-app='')
 
                       td.span2(ng-bind='info.name')
 
+=======
+                      th.span7
+                        h4 Text
+
+                  tbody#body-scroll
+                    tr(ng-repeat='info in userData track by $index')
+                      td.span2(ng-bind='info.name')
+>>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
                       td.span7(ng-bind='info.text')
 
                 .row.controls
@@ -107,6 +147,10 @@ html(ng-app='')
 
                     .input-append.span7
                       input.span6(ng-model='userText', placeholder='Text Input', type='text')
+<<<<<<< HEAD
 
                       input.btn.btn-primary( ng-disabled='!userText', type='submit', value='Submit')
+=======
+                      input.btn.btn-success( ng-disabled='!userText', type='submit', value='Enter')
+>>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
   div.fix

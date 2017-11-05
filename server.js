@@ -21,40 +21,53 @@ let socketArr = [];
 let userTextArr = [];
 let numUser = 0;
 
-io.on('connection', function(socket){
-  numUser++;
-    userTextArr.forEach(function(data){
-      socket.emit('message', data);
+io.on('connection',
+  function(socket){
+    numUser++;
+      userTextArr.forEach(function(data){
+        socket.emit('message', data);
     });
 
     socketArr.push(socket);
 
-    socket.on('message', function(textInput){
-      let userText = String(textInput || '');
+    socket.on('message',
+      function(textInput){
+        let userText = String(textInput || '');
 
-      if (!userText)
-        return;
+        if (!userText){
+          return;
+        }
 
-      socket.get('name', function(err, userName){
-        let data = { name: userName,
-                     text: userText
-        };
-        allClients('message', data);
-        userTextArr.push(data);
-      });
+        socket.get('name',
+          function(err, userName){
+            let data = { name: userName,
+                         text: userText
+            };
+            allClients('message', data);
+            userTextArr.push(data);
+          });
     });
 
-    socket.on('identify', function(name){
-      socket.set('name', String(name || 'Anonymous'), function(err){
-        updateUserList();
-      });
+    socket.on('identify',
+      function(name){
+        socket.set('name', String(name || 'Anonymous'), function(err){
+          updateUserList();
+        });
     });
 
 
+<<<<<<< HEAD
     socket.on('disconnect', function(){
       numUser--;
       socketArr.splice(socketArr.indexOf(socket), 1);
       updateUserList();
+=======
+    socket.on('disconnect',
+      function(){
+        numUser--;
+        socketArr.splice(socketArr.indexOf(socket), 1);
+        updateUserList();
+>>>>>>> 9fff728336e0045a7910fb5b4301ac69eb5f1335
     });
 
   });
