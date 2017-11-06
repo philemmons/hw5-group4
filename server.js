@@ -35,20 +35,29 @@ io.on('connection', function(socket){
 
       if (!userText)
         return;
-      //UPDATE THE GET AND SET METHODS OF SOCKET, HERES A LINK TO HELP. https://github.com/socketio/socket.io/blob/master/examples/chat/index.js#L35-L36
-      socket.get('name', function(err, userName){
-        let data = { name: userName,
+      //  MY UPDATE OF THE GET METHOD
+      let data = { name: socket.name,
                      text: userText
         };
-        allClients('message', data);
-        userTextArr.push(data);
-      });
+      allClients('message', data);
+      userTextArr.push(data);
+      
+      // socket.get('name', function(err, userName){
+      //   let data = { name: userName,
+      //               text: userText
+      //   };
+      //   allClients('message', data);
+      //   userTextArr.push(data);
+      // });
     });
 
     socket.on('identify', function(name){
-      socket.set('name', String(name || 'Anonymous'), function(err){
-        updateUserList();
-      });
+      socket.name = String(name || 'Anonymous');
+      updateUserList();
+      //UPDATED SET
+      // socket.set('name', String(name || 'Anonymous'), function(err){
+      //   updateUserList();
+      // });
     });
     
     
@@ -69,7 +78,8 @@ function allClients( event, eventData){
 function updateUserList(){
   async.map( socketArr,
             function( socket, callback){
-              socket.get( 'name', callback);
+              socket.name = callback;
+              //socket.get( 'name', callback);
             },
             function( err, names){
               allClients( 'userList', names);
