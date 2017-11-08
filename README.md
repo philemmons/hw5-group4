@@ -25,8 +25,6 @@ Heroku url: https://hw5-group4-chatapp.herokuapp.com/
 * To improve our project we could add authentification to the chat room.
 * Once authentification is added, we can then autofill the username of the person who is on the chat.
 * Perhaps, add an anonymous feature - so users aren't required to login if they don't want to.
-* <del>Another known improvement is a user might not know what the number in the uper right hand corner means.</del>
-
 
 ## To Run the Program Locally -
 
