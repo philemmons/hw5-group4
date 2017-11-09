@@ -39,7 +39,10 @@ body {
 	padding-top: 1.5em;
 	padding-left: 2.0em;
 }
-
+.userWidth{
+	float: left;
+	width: 60px !important;
+}
 #content {
 	float: left;
 	clear: left;

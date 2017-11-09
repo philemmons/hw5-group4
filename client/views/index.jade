@@ -82,14 +82,16 @@ html(ng-app='')
                 table.table.table-striped.table-bordered
                   thead.head-scroll
                     tr
-                      th.span2
-                        h4 User
+                      th
+                        div.userWidth
+                          h4 User
                       th.span7
-                        h4 Text
+                          h4 Text
 
                   tbody#body-scroll
                     tr(ng-repeat='info in userData track by $index')
-                      td.span2(ng-bind='info.name')
+                      td
+                        div.userWidth(ng-bind='info.name')
                       td.span7(ng-bind='info.text')
 
                 .row.controls
