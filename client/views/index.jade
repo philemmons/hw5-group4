@@ -13,6 +13,7 @@ html(ng-app='')
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js')
 
     script.
+    
       function AngJSController($scope) {
         var socket = io.connect();
 
@@ -43,6 +44,27 @@ html(ng-app='')
         });
 
         $scope.send = function send(){
+        $scope.userText = 'rere';
+          // i think code goes here.. maybe
+          // var message = <?php findSwearwords('pokemon')?>
+          // $scope.userText = <?php findSwearwords('pokemon')?>;
+          
+                  
+        
+        // $.ajax({
+        //     url: "../php/checkMessages.php",
+        //     type: "post",
+        //     cache: "string",
+        //     data: {$scope.userText},
+        //     success: function(){
+        //         alert("success");
+        //     },
+        //     error: function(){
+        //         alert("failure");
+        //     }
+        // });
+        
+          
           socket.emit('message', $scope.userText);
           $scope.userText = '';
         };
