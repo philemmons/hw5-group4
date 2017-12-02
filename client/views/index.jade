@@ -80,8 +80,6 @@ html(ng-app='')
                   form(ng-submit='send()')
                     .span2
                       input.input-block-level(ng-model='userName', ng-change='setName()', placeholder='User Name', type='text')
-
-                    .input-append.span7
                       input.span6(ng-model='userText', placeholder='Text Input', type='text')
                       input.btn.btn-success( ng-disabled='!userText', type='submit', value='Enter')
   div.fix
