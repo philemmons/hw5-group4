@@ -33,8 +33,8 @@ h4 {
 #page h1 {
 	margin: 0px;
 	color: #fff;
-	padding: 5px 0px 0px 10px;
-	background-image: url(/img/header.png);
+	/*padding: 5px 0px 0px 10px;*/
+	/*background-image: url(/img/header.png);*/
 }
 
 ul{
@@ -58,7 +58,7 @@ table{
 
 #body-scroll{
 	display:block;
-	height: 270px;
+	height: 200px;
 	overflow-y:auto;
 	border: solid rgb(204, 204, 204) 0.5px;
 	
