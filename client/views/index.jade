@@ -2,7 +2,6 @@ doctype html
 html(ng-app='')
   head
     title Live Chat
-
     meta(name='viewport', content='width=device-width, initial-scale=1.0', charset='utf-8')
 
     style type='text/css'.
@@ -11,11 +10,10 @@ html(ng-app='')
         include ../css/mystyle.css
 
     script(src='/socket.io/socket.io.js')
-    script(src='/js/jquery.min.js')
-    script(src='/js/bootstrap.min.js')
     script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js')
 
     script.
+    
       function AngJSController($scope) {
         var socket = io.connect();
 
@@ -24,6 +22,7 @@ html(ng-app='')
         $scope.userName = '';
         $scope.userText = '';
         $scope.numUser = 0;
+
         socket.on('connect', function(){
           $scope.setName();
           $scope.$apply();
@@ -57,25 +56,8 @@ html(ng-app='')
   body
     #container(ng-controller='AngJSController')
       #page
+         h1 Chat Box
         #header
-          h1 Live Assistance
-
-          .right
-            a(href='https://github.com/CSUMB-SCD/group4_FinalProject')  Project Github
-            <br>
-            a(href='https://github.com/philemmons/hw5-group4')  HW5 Github
-            br
-            span.user <br>Users:
-            span.user(ng-bind='numUser')
-
-        #main
-          #area
-            #title
-              h4 Users Online
-
-            ul
-              li(ng-repeat='name in userNameArr track by $index',ng-bind='name')
-
           #content
             .row
               .span9

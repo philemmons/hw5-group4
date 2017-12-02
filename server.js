@@ -1,4 +1,3 @@
-
 let http = require('http');
 let path = require('path');
 let async = require('async');
@@ -32,6 +31,7 @@ io.on('connection',
 
     socket.on('message',
       function(textInput){
+        
         let userText = String(textInput || '');
 
         if (!userText){
@@ -54,7 +54,6 @@ io.on('connection',
           updateUserList();
         });
     });
-
 
     socket.on('disconnect',
       function(){
