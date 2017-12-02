@@ -44,27 +44,6 @@ html(ng-app='')
         });
 
         $scope.send = function send(){
-        $scope.userText = 'rere';
-          // i think code goes here.. maybe
-          // var message = <?php findSwearwords('pokemon')?>
-          // $scope.userText = <?php findSwearwords('pokemon')?>;
-          
-                  
-        
-        // $.ajax({
-        //     url: "../php/checkMessages.php",
-        //     type: "post",
-        //     cache: "string",
-        //     data: {$scope.userText},
-        //     success: function(){
-        //         alert("success");
-        //     },
-        //     error: function(){
-        //         alert("failure");
-        //     }
-        // });
-        
-          
           socket.emit('message', $scope.userText);
           $scope.userText = '';
         };
@@ -78,23 +57,7 @@ html(ng-app='')
     #container(ng-controller='AngJSController')
       #page
         #header
-          h1 Live Assistance
-
-          .right
-            a(href='https://github.com/CSUMB-SCD/group4_FinalProject')  Project Github
-            <br>
-            a(href='https://github.com/philemmons/hw5-group4')  HW5 Github
-            br
-            span.user <br>Users:
-            span.user(ng-bind='numUser')
-        #main
-          #area
-            #title
-              h4 Users Online
-
-            ul
-              li(ng-repeat='name in userNameArr track by $index',ng-bind='name')
-
+          h1 Chat Box
           #content
             .row
               .span9
