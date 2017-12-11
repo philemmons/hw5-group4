@@ -15,7 +15,7 @@ body{
 	padding: 0 !important;
 }
 #container {
-	margin-bottom: -100%;
+	/*margin-bottom: -100%;*/
 	background-color: #fff;
 	overflow-x:hidden;
 	width: 100%;
@@ -75,13 +75,10 @@ table{
 	position:relative;
 	display: block;
 	border: solid rgb(204, 204, 204) 0.5px;
-	
-
 }
 
 .span9, .span6{
 	width: 100% !important;
-	
 }
 
 .table td.span7, .table th.span7 {
