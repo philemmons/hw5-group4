@@ -63,7 +63,7 @@ table{
 
 #body-scroll{
 	display:block;
-	height: 200px;
+	height: 350px;
 	overflow-y:auto;
 	border: solid rgb(204, 204, 204) 0.5px;
 	
